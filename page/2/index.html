@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="zhou1996.github.io/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="zhou1996.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-自定义字体图标" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/06/自定义字体图标/" class="article-date">
+  <time datetime="2016-12-06T06:07:11.391Z" itemprop="datePublished">2016-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/06/自定义字体图标/">自定义字体图标</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">font-face</span>&#123;</div><div class="line">    <span class="comment">/*自己定义字体名字*/</span></div><div class="line">    <span class="attribute">font-family</span>: <span class="string">"UIcon"</span>;</div><div class="line">    <span class="comment">/*导入字体图标文件，在iconfont网站下载*/</span></div><div class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">"../font/iconfont.eot"</span>);</div><div class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">"../font/iconfont.eot#iefix"</span>) <span class="built_in">format</span>(<span class="string">"embedded-opentype"</span>),</div><div class="line">         <span class="built_in">url</span>(<span class="string">"../font/iconfont.woff"</span>) <span class="built_in">format</span>(<span class="string">"woff"</span>),</div><div class="line">         <span class="built_in">url</span>(<span class="string">"../font/iconfont.ttf"</span>) <span class="built_in">format</span>(<span class="string">"truetype"</span>),</div><div class="line">         <span class="built_in">url</span>(<span class="string">"../font/iconfont.svg#UIcon"</span>) <span class="built_in">format</span>(<span class="string">"svg"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">/*设置class使用字体图标*/</span></div><div class="line"><span class="selector-class">.icon-edit</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>: <span class="string">"UIcon"</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#0066ff</span>;</div><div class="line">    <span class="attribute">font-style</span>: normal;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*设置属性使用字体图标*/</span></div><div class="line"><span class="selector-tag">i</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>:<span class="string">"UIcon"</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-style</span>: normal;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#0f0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/06/自定义字体图标/" data-id="ciwmzcy51000dtgye7tj5bzpo" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-自定义字体图标(1)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/06/自定义字体图标(1)/" class="article-date">
+  <time datetime="2016-12-06T06:07:11.391Z" itemprop="datePublished">2016-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">font-face</span>&#123;</div><div class="line">    <span class="comment">/*自己定义字体名字*/</span></div><div class="line">    <span class="attribute">font-family</span>: <span class="string">"UIcon"</span>;</div><div class="line">    <span class="comment">/*导入字体图标文件，在iconfont网站下载*/</span></div><div class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">"../font/iconfont.eot"</span>);</div><div class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">"../font/iconfont.eot#iefix"</span>) <span class="built_in">format</span>(<span class="string">"embedded-opentype"</span>),</div><div class="line">         <span class="built_in">url</span>(<span class="string">"../font/iconfont.woff"</span>) <span class="built_in">format</span>(<span class="string">"woff"</span>),</div><div class="line">         <span class="built_in">url</span>(<span class="string">"../font/iconfont.ttf"</span>) <span class="built_in">format</span>(<span class="string">"truetype"</span>),</div><div class="line">         <span class="built_in">url</span>(<span class="string">"../font/iconfont.svg#UIcon"</span>) <span class="built_in">format</span>(<span class="string">"svg"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">/*设置class使用字体图标*/</span></div><div class="line"><span class="selector-class">.icon-edit</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>: <span class="string">"UIcon"</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#0066ff</span>;</div><div class="line">    <span class="attribute">font-style</span>: normal;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*设置属性使用字体图标*/</span></div><div class="line"><span class="selector-tag">i</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>:<span class="string">"UIcon"</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">20px</span>;</div><div class="line">    <span class="attribute">font-style</span>: normal;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#0f0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/06/自定义字体图标(1)/" data-id="ciwmzcy4z000ctgyeptvf60y0" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-字体阴影" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/06/字体阴影/" class="article-date">
+  <time datetime="2016-12-06T03:16:37.727Z" itemprop="datePublished">2016-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="字体阴影"><a href="#字体阴影" class="headerlink" title="字体阴影"></a>字体阴影</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.text</span> <span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">text-shadow</span>:<span class="number">1px</span> <span class="number">1px</span> <span class="number">3px</span> red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/06/字体阴影/" data-id="ciwmzcy3y0003tgyekq2my93u" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-字体" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/06/字体/" class="article-date">
+  <time datetime="2016-12-06T03:01:37.229Z" itemprop="datePublished">2016-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/06/字体/">字体</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.text</span> <span class="selector-tag">p</span>&#123;</div><div class="line"><span class="comment">/*字体样式*/</span></div><div class="line"></div><div class="line">    <span class="comment">/*斜体*/</span></div><div class="line">    <span class="attribute">font-style</span>:italic</div><div class="line">    </div><div class="line">    <span class="comment">/*正常字体*/</span></div><div class="line">    font-style:normal;</div><div class="line">    </div><div class="line">    <span class="comment">/*人为倾斜字体*/</span></div><div class="line">    <span class="attribute">font-style</span>:oblique;</div><div class="line">    </div><div class="line">    <span class="comment">/*可以覆盖字体粗细为无*/</span></div><div class="line">    <span class="attribute">font-weight</span>:normal;</div><div class="line">    </div><div class="line">    <span class="comment">/*字体3倍大小*/</span></div><div class="line">    <span class="attribute">font-size</span>:<span class="number">3em</span>;</div><div class="line">    </div><div class="line">    <span class="comment">/*相当于body的字体大小倍数*/</span></div><div class="line">    <span class="attribute">font-size</span>:<span class="number">1rem</span>;</div><div class="line">    </div><div class="line">    <span class="comment">/*设置字体，顺序不能变，第一个是粗体，第二个是字体大小，/23是行高，第三个是字体*/</span></div><div class="line">    <span class="attribute">font</span>:bold <span class="number">12px</span>/<span class="number">23</span> <span class="string">"Microsoft YaHei"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/06/字体/" data-id="ciwmzcy3v0002tgyeuvfudyh8" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-文字阴影" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/06/文字阴影/" class="article-date">
+  <time datetime="2016-12-06T02:50:38.000Z" itemprop="datePublished">2016-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/06/文字阴影/">文字阴影</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">p</span>&#123;</div><div class="line">	<span class="attribute">text-shadow</span>:<span class="number">1px</span> <span class="number">1px</span> <span class="number">2px</span> red;</div><div class="line">	<span class="comment">/*第一个为平行参数，第二个为垂直参数，第三个为模糊程度，第四个为颜色*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/06/文字阴影/" data-id="ciwmzcy4a0005tgye3o4qr5ab" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-清除浮动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/06/清除浮动/" class="article-date">
+  <time datetime="2016-12-06T01:26:22.800Z" itemprop="datePublished">2016-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/06/清除浮动/">清除浮动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*在要清除的下面加个div*/</span></div><div class="line"><span class="selector-class">.clearfix</span>&#123;</div><div class="line">    <span class="attribute">clear</span>:both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*.clearfix加在父级class里面*/</span></div><div class="line"><span class="selector-class">.clearfix</span>&#123;</div><div class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">    <span class="attribute">clear</span>:both;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/06/清除浮动/" data-id="ciwmzcy4n0008tgye37xih8uw" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-边框阴影" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/06/边框阴影/" class="article-date">
+  <time datetime="2016-12-06T01:18:21.044Z" itemprop="datePublished">2016-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/06/边框阴影/">边框阴影</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="边框阴影"><a href="#边框阴影" class="headerlink" title="边框阴影"></a>边框阴影</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="comment">/*内部阴影*/</span>inset <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">#0f0</span>,<span class="comment">/*外部阴影*/</span><span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">#f00</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/06/边框阴影/" data-id="ciwmzcy5d000itgye2b2hjvjb" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-建三角形" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/05/建三角形/" class="article-date">
+  <time datetime="2016-12-05T09:29:06.499Z" itemprop="datePublished">2016-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/05/建三角形/">建立三角形</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h2><h4 id="上三角形"><a href="#上三角形" class="headerlink" title="上三角形"></a>上三角形</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">border-style</span>:solid;</div><div class="line">    <span class="attribute">border-width</span>:<span class="number">50px</span>;</div><div class="line">    <span class="attribute">border-color</span>:<span class="number">#f00</span> transparent transparent transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/05/建三角形/" data-id="ciwmzcy460004tgyefdb8wg26" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-超出部分省略显示" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/05/超出部分省略显示/" class="article-date">
+  <time datetime="2016-12-05T08:49:01.912Z" itemprop="datePublished">2016-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/05/超出部分省略显示/">超出部分省略显示</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="超出部分省略显示"><a href="#超出部分省略显示" class="headerlink" title="超出部分省略显示"></a>超出部分省略显示</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">white-space</span>:nowrap;<span class="comment">/*强制在一行显示*/</span></div><div class="line">    <span class="attribute">overflow</span>:hidden;<span class="comment">/*超出部分隐藏*/</span></div><div class="line">    <span class="attribute">text-overflow</span>:ellipsis;<span class="comment">/*超出部分用省略号代替*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/05/超出部分省略显示/" data-id="ciwmzcy52000etgyerwkm3t1a" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/08/背景图片/">背景图片</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/08/媒体查询/">媒体查询</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/07/去掉input边框线/">去掉input边框线</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/07/过渡动画类型/">过渡动画类型</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/06/过渡时间：设定transform变换属性的过渡时间/">过渡时间</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
