@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="zhou1996.github.io"></form>
@@ -60,6 +60,184 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-js简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/23/js简介/" class="article-date">
+  <time datetime="2016-12-23T02:39:29.843Z" itemprop="datePublished">2016-12-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/23/js简介/">js简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是JavaScript"><a href="#什么是JavaScript" class="headerlink" title="什么是JavaScript"></a>什么是JavaScript</h3><p>javeScript是一种轻量级脚本语言呢</p>
+<p>脚本语言：指的是它不具备开发操作系统的能力，而是只用来编写控制其他大型应用程序的“脚本”。</p>
+<h3 id="1-JavaScript的组成"><a href="#1-JavaScript的组成" class="headerlink" title="1.JavaScript的组成"></a>1.JavaScript的组成</h3><ul>
+<li>ECMAscript:一套标准，最新的标准是ES6(简称)</li>
+<li><ul>
+<li>基本的语法结构：比如操作符、控制结构、语句</li>
+</ul>
+</li>
+<li><ul>
+<li>标准库：Array、Date、Math等</li>
+</ul>
+</li>
+<li>BOM：Browser Object Model，浏览器对象模型</li>
+<li>DOM: Document Object Model, 文档对象模型</li>
+</ul>
+<h3 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h3><ol>
+<li>变量的声明和赋值是分开的2个步骤。</li>
+<li>作用域：在函数内用var声明的变量为局部变量，在函数外声明的变量为全局变量。</li>
+<li>重复声明的变量无效。</li>
+</ol>
+<h3 id="3-标识符"><a href="#3-标识符" class="headerlink" title="3.标识符"></a>3.标识符</h3><ul>
+<li>标识符是用来识别具体对象的一个名称。</li>
+<li>最常见的标识符就是变量名，以及后面的函数名</li>
+</ul>
+<p><strong>标识符规则</strong>：</p>
+<ol>
+<li>标识符命名必须保证不能以数字作为开始符号</li>
+<li>标识符命名应当保证其具有见文识意的取名方式</li>
+<li>自定义标识符不允许与关键字和保留名同名</li>
+<li>$符号应当写在标识符的首字母处</li>
+<li>js语言对标识符大小写敏感</li>
+</ol>
+<h3 id="引入库文件"><a href="#引入库文件" class="headerlink" title="引入库文件"></a>引入库文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!--导入的js放上面，自己写的放下面--&gt;</div><div class="line">&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/23/js简介/" data-id="cix5f5m9l0000ysyerdq9r4dp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-滚动条" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/20/滚动条/" class="article-date">
+  <time datetime="2016-12-20T08:56:37.608Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/滚动条/">滚动条</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="谷歌滚动条"><a href="#谷歌滚动条" class="headerlink" title="谷歌滚动条"></a>谷歌滚动条</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.box .left&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    resize: both;</div><div class="line">    overflow-y: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span>设置滚动条样式<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.left</span><span class="selector-pseudo">::-webkit-scrollbar</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">14px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.left</span><span class="selector-pseudo">::-webkit-scrollbar-track</span>,</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.left</span><span class="selector-pseudo">::-webkit-scrollbar-thumb</span>&#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid transparent;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.left</span><span class="selector-pseudo">::-webkit-scrollbar-track</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">1px</span> <span class="number">1px</span> <span class="number">5px</span> <span class="built_in">rgba</span>(0,0,0,.2) inset;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.left</span><span class="selector-pseudo">::-webkit-scrollbar-thumb</span> &#123;</div><div class="line">    <span class="attribute">min-height</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">background-clip</span>: content-box;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(0,0,0,.2) inset;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.left</span><span class="selector-pseudo">::-webkit-scrollbar-corner</span> &#123;</div><div class="line">    <span class="attribute">background</span>: transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/20/滚动条/" data-id="cix5f5mas000fysye99rq2nrs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-三栏布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/20/三栏布局/" class="article-date">
+  <time datetime="2016-12-20T07:40:13.073Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/三栏布局/">三栏布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;center&quot;&gt;center&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span>中间自适应<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.left</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#654</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.center</span>&#123;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">100px</span> <span class="number">0</span> <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#655478</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.right</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#989</span>;</div><div class="line">&#125;</div><div class="line">    </div><div class="line">&lt;!<span class="selector-tag">--</span>右边自适应<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.left</span> ,<span class="selector-class">.center</span>&#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.right</span>&#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#458</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/20/三栏布局/" data-id="cix5f5m9r0001ysyeevs4jg21" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-两栏布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/20/两栏布局/" class="article-date">
+  <time datetime="2016-12-20T05:37:56.197Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/两栏布局/">两栏布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="两栏布局"><a href="#两栏布局" class="headerlink" title="两栏布局"></a>两栏布局</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span>左边固定，右边自适应<span class="selector-tag">--</span>&gt;</div><div class="line">&lt;!<span class="selector-tag">--</span>第一种<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.left</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">float</span>:left;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.right</span>&#123;</div><div class="line">    <span class="attribute">overflow</span>:hidden;</div><div class="line">&#125;</div><div class="line">&lt;!<span class="selector-tag">--</span>右边固定，左边自适应<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">position</span>:relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.left</span>&#123;</div><div class="line">    <span class="attribute">padding-right</span>:<span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.right</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;!<span class="selector-tag">--</span>第二种<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">display</span>:table;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.left</span>&#123;</div><div class="line">    <span class="attribute">display</span>:table-cell;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#956</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.right</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">display</span>:table-cell;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#722</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/20/两栏布局/" data-id="cix5f5m9u0002ysyen7b7si7v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-水平垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -87,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/水平垂直居中/" data-id="ciwwza6fa0006ioyepcry8ox4" class="article-share-link">Partager</a>
+      <a data-url="zhou1996.github.io/2016/12/20/水平垂直居中/" data-id="cix5f5mat000gysyet62p23zo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/渐变色文字/" data-id="ciwwza6fm000aioyeh3is0rse" class="article-share-link">Partager</a>
+      <a data-url="zhou1996.github.io/2016/12/20/渐变色文字/" data-id="cix5f5map000dysye62eq4ggl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -161,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/动画（心脏跳动）/" data-id="ciwwza6en0000ioyeoft5f7ep" class="article-share-link">Partager</a>
+      <a data-url="zhou1996.github.io/2016/12/20/动画（心脏跳动）/" data-id="cix5f5m9x0003ysyem0vzts9c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +375,43 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/插入网页上的logo/" data-id="ciwwza6fc0007ioye26ey6qge" class="article-share-link">Partager</a>
+      <a data-url="zhou1996.github.io/2016/12/20/插入网页上的logo/" data-id="cix5f5maf0009ysyejl8jhsuy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-单栏布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/20/单栏布局/" class="article-date">
+  <time datetime="2016-12-20T03:49:05.982Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/单栏布局/">水平垂直居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span>第一种<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">50%</span></div><div class="line">    transform:<span class="built_in">translate</span>(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2016/12/20/单栏布局/" data-id="cix5f5ma40006ysyeg9s5w94p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,189 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/08/背景图片/" data-id="ciwwza6fu000fioyezpull397" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-媒体查询" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/08/媒体查询/" class="article-date">
-  <time datetime="2016-12-08T01:52:14.814Z" itemprop="datePublished">2016-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/08/媒体查询/">媒体查询</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><pre><code>&lt;meta name=&quot;viewport(窗口)&quot;content=&quot;width=device-width(设备宽度),initial-scale=1.0(初始缩放为1),maximum-scal=1.0(最大缩放为1),use-scalable=no(禁止用户控制缩放)&quot;&gt;
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/08/媒体查询/" data-id="ciwwza6f00003ioyelxhxk48k" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-去掉input边框线" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/07/去掉input边框线/" class="article-date">
-  <time datetime="2016-12-07T09:30:04.211Z" itemprop="datePublished">2016-12-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/07/去掉input边框线/">去掉input边框线</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.input</span>&#123;</div><div class="line">    <span class="comment">/*去掉边框线*/</span></div><div class="line">    <span class="attribute">outline</span>:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/07/去掉input边框线/" data-id="ciwwza6ew0002ioyeskzjsyb9" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-过渡动画类型" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/07/过渡动画类型/" class="article-date">
-  <time datetime="2016-12-07T02:19:27.814Z" itemprop="datePublished">2016-12-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/07/过渡动画类型/">过渡动画类型</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="comment">/*设置线性过渡*/</span></div><div class="line">    <span class="attribute">transition-timing-function</span>:linear;</div><div class="line">    <span class="comment">/*设置由快到慢*/</span></div><div class="line">    <span class="attribute">transition-timing-function</span>:ease-in;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="更多属性见css参考手册"><a href="#更多属性见css参考手册" class="headerlink" title="更多属性见css参考手册"></a>更多属性见css参考手册</h5>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/07/过渡动画类型/" data-id="ciwwza6g8000lioyeorh1oskt" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-过渡时间：设定transform变换属性的过渡时间" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/06/过渡时间：设定transform变换属性的过渡时间/" class="article-date">
-  <time datetime="2016-12-06T08:26:24.574Z" itemprop="datePublished">2016-12-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/过渡时间：设定transform变换属性的过渡时间/">过渡时间</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="过渡时间"><a href="#过渡时间" class="headerlink" title="过渡时间"></a>过渡时间</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transform</span> <span class="selector-class">.translate</span>&#123;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#99e</span>;</div><div class="line">    <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transform</span> <span class="selector-class">.translate</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="comment">/*定义物体平移 X，Y轴*/</span></div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(20px,30px);</div><div class="line">    <span class="comment">/*过渡时间，transition过渡，duration持续*/</span></div><div class="line">    <span class="attribute">transition-duration</span>:<span class="number">1s</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/06/过渡时间：设定transform变换属性的过渡时间/" data-id="ciwwza6g6000kioyeaexvxevn" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-物体平移" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/06/物体平移/" class="article-date">
-  <time datetime="2016-12-06T07:50:05.978Z" itemprop="datePublished">2016-12-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/物体平移/">物体平移</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="物体平移"><a href="#物体平移" class="headerlink" title="物体平移"></a>物体平移</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">    <span class="selector-class">.transform</span> <span class="selector-class">.translate</span>&#123;</div><div class="line">        <span class="attribute">margin-top</span>: <span class="number">50px</span>;</div><div class="line">        <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">        <span class="attribute">background</span>: <span class="number">#99e</span>;</div><div class="line">        <span class="attribute">cursor</span>: pointer;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.transform</span> <span class="selector-class">.translate</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">        <span class="comment">/*定义物体平移 X，Y轴*/</span></div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translate</span>(20px,30px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/06/物体平移/" data-id="ciwwza6fn000bioyemo20alyf" class="article-share-link">Partager</a>
+      <a data-url="zhou1996.github.io/2016/12/08/背景图片/" data-id="cix5f5mbj000jysye7nsrhtx4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,28 +486,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
+            <a href="/2016/12/23/js简介/">js简介</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/20/滚动条/">滚动条</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/20/三栏布局/">三栏布局</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/20/两栏布局/">两栏布局</a>
+          </li>
+        
+          <li>
             <a href="/2016/12/20/水平垂直居中/">水平垂直居中</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/20/渐变色文字/">渐变色文字</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/20/动画（心脏跳动）/">动画(心脏跳动)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/20/插入网页上的logo/">插入网页上logo</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/08/背景图片/">背景图片</a>
           </li>
         
       </ul>
@@ -491,7 +523,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
