@@ -61,6 +61,32 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Verification(随机验证码)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/23/Verification(随机验证码)/" class="article-date">
+  <time datetime="2017-02-23T05:58:46.823Z" itemprop="datePublished">2017-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">$width = <span class="number">80</span>;</div><div class="line">$height = <span class="number">30</span>;</div><div class="line">$type = <span class="number">3</span>;</div><div class="line">$len = <span class="number">4</span>;</div><div class="line">$line = <span class="number">4</span>;</div><div class="line">$pixel = <span class="number">50</span>;</div><div class="line"></div><div class="line"><span class="comment">// 1.创建画布</span></div><div class="line">$image = imagecreatetruecolor($width,$height);</div><div class="line"></div><div class="line"><span class="comment">// 2.创建颜色</span></div><div class="line">$white = imagecolorallocate($image,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>);</div><div class="line">$black = imagecolorallocate($image,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="comment">// 3.填充整个矩形区域</span></div><div class="line">imagefilledrectangle($image,<span class="number">1</span>,<span class="number">1</span>,$width<span class="number">-2</span>,$height<span class="number">-2</span>,$white);</div><div class="line"></div><div class="line"><span class="comment">// 4.准备字符串</span></div><div class="line">$str = getStr($type,$len);</div><div class="line"><span class="comment">// 5.准备字体</span></div><div class="line">$fontFile = <span class="keyword">array</span>(<span class="string">"Deng.ttf"</span>,<span class="string">"Dengb.ttf"</span>,<span class="string">"Dengl.ttf"</span>,<span class="string">"FZYTK.TTF"</span>,</div><div class="line"><span class="string">"msyh.ttc"</span>,</div><div class="line"><span class="string">"msyhbd.ttc"</span>,</div><div class="line"><span class="string">"msyhl.ttc"</span>,</div><div class="line"><span class="string">"simfang.ttf"</span>,</div><div class="line"><span class="string">"STLITI.TTF"</span>,</div><div class="line"><span class="string">"STXINWEI.TTF"</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 6.单独绘制文字</span></div><div class="line"><span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;strlen($str); $i++)&#123;</div><div class="line">    $size = mt_rand(<span class="number">14</span>, <span class="number">18</span>);</div><div class="line">    $angle = mt_rand(<span class="number">-15</span>, <span class="number">15</span>);</div><div class="line">    $x = <span class="number">5</span> + $size*$i;</div><div class="line">    $y = mt_rand(<span class="number">20</span>, <span class="number">26</span>);</div><div class="line">    $color = imagecolorallocate($image, mt_rand(<span class="number">90</span>, <span class="number">120</span>),mt_rand(<span class="number">100</span>,<span class="number">200</span>),mt_rand(<span class="number">120</span>,<span class="number">250</span>));</div><div class="line">    $font_file = <span class="string">"font/"</span>.$fontFile[mt_rand(<span class="number">0</span>,count($fontFile)<span class="number">-1</span>)];</div><div class="line">    $text = substr($str,$i,<span class="number">1</span>);</div><div class="line">    imagettftext($image, $size, $angle, $x, $y, $color, $font_file, $text);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 7.干扰元素--点</span></div><div class="line"><span class="keyword">if</span>($pixel)&#123;</div><div class="line">    <span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;$pixel; $i++)&#123;</div><div class="line">        imagesetpixel($image, mt_rand(<span class="number">1</span>, $width<span class="number">-2</span>), mt_rand(<span class="number">1</span>, $height<span class="number">-2</span>), $black);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 9.干扰元素--线</span></div><div class="line"><span class="keyword">if</span>($line)&#123;</div><div class="line">    <span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;$line; $i++)&#123;</div><div class="line">        $color = imagecolorallocate($image, mt_rand(<span class="number">90</span>, <span class="number">120</span>),mt_rand(<span class="number">100</span>,<span class="number">200</span>),mt_rand(<span class="number">120</span>,<span class="number">250</span>));</div><div class="line">        imageline($image, mt_rand(<span class="number">1</span>, $width<span class="number">-2</span>), mt_rand(<span class="number">0</span>, $height<span class="number">-2</span>), mt_rand(<span class="number">1</span>, $width<span class="number">-2</span>), mt_rand(<span class="number">0</span>, $height<span class="number">-2</span>),$color);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 输出图片</span></div><div class="line">header(<span class="string">"content-type:image/gif"</span>);</div><div class="line"><span class="comment">// 输出图像到浏览器或文件</span></div><div class="line">imagegif($image);</div><div class="line"><span class="comment">// 销毁一图像</span></div><div class="line">imagedestroy($image);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@param</span> $type 类型：1-纯数字； 2-纯字母； 3-数字+字母</div><div class="line"> * <span class="doctag">@param</span> $len 验证码的长度</div><div class="line"> * <span class="doctag">@return</span> string 验证码的字符串</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStr</span><span class="params">($type=<span class="number">1</span>,$len=<span class="number">4</span>)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> ($type == <span class="number">1</span>) &#123;</div><div class="line">        $str = <span class="string">"1234567890"</span>;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> ($type == <span class="number">2</span>) &#123;</div><div class="line">        $str = <span class="string">"dsajfoisadjf"</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        $str = <span class="string">"1234567890abcdefghijklmnopqrstuvwxyz"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 将字符串打乱</span></div><div class="line">    $chars = str_shuffle($str);</div><div class="line">    <span class="comment">// 截取$len个长度的字符串，并返回</span></div><div class="line">    <span class="keyword">return</span> substr($chars, <span class="number">0</span>, $len);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2017/02/23/Verification(随机验证码)/" data-id="cizhzjgd60001q4yeju6f3ual" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js简介" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/12/23/js简介/" class="article-date">
@@ -119,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/23/js简介/" data-id="cizhzedg0000f80ye4ltfeip6" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/23/js简介/" data-id="cizhzjgd10000q4yeheanqqt8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/滚动条/" data-id="cizhzedfq000a80yeubh6q26a" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/滚动条/" data-id="cizhzjge5000fq4ye8q5r51tt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/三栏布局/" data-id="cizhzeddm000180yekbr91r0q" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/三栏布局/" data-id="cizhzjgda0002q4yep6j5m5t2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/两栏布局/" data-id="cizhzeddh000080yekjfc3v94" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/两栏布局/" data-id="cizhzjgde0004q4ye8nxqsnj6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/水平垂直居中/" data-id="cizhzedfp000980yejz9i2kg4" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/水平垂直居中/" data-id="cizhzjge2000dq4yehyrp3gnv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/渐变色文字/" data-id="cizhzedgp000o80yell4hj5m9" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/渐变色文字/" data-id="cizhzjge6000gq4yew9ct3p7q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -339,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/动画（心脏跳动）/" data-id="cizhzedgk000n80yeq3xxrlj4" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/动画（心脏跳动）/" data-id="cizhzjgdd0003q4yexdajmcrq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -375,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/插入网页上的logo/" data-id="cizhzedgv000p80ye65jwovox" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/插入网页上的logo/" data-id="cizhzjgdy000bq4yec6qbu4l8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -411,43 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/单栏布局/" data-id="cizhzeddp000280ye627dpbmx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-背景图片" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/08/背景图片/" class="article-date">
-  <time datetime="2016-12-08T03:18:45.841Z" itemprop="datePublished">2016-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/08/背景图片/">背景图片</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="comment">/*第一个参数为图片，第二个参数为位置，第三个参数为不重复*/</span></div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../images/jd-sprites.png) <span class="number">0</span> -<span class="number">109px</span> no-repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/08/背景图片/" data-id="cizhzedg8000i80ye804w9zeb" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/单栏布局/" data-id="cizhzjgdm0006q4ye92c0jw24" class="article-share-link">Share</a>
       
       
     </footer>
@@ -478,7 +468,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
     </div>
   </div>
 
@@ -489,6 +479,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/23/Verification(随机验证码)/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2016/12/23/js简介/">js简介</a>
@@ -504,10 +498,6 @@
         
           <li>
             <a href="/2016/12/20/两栏布局/">两栏布局</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/20/水平垂直居中/">水平垂直居中</a>
           </li>
         
       </ul>
