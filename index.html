@@ -61,6 +61,280 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-PHP_MySqli" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/08/PHP_MySqli/" class="article-date">
+  <time datetime="2017-03-08T02:46:47.320Z" itemprop="datePublished">2017-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/08/PHP_MySqli/">PHP数据库操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PHP数据库操作"><a href="#PHP数据库操作" class="headerlink" title="PHP数据库操作"></a>PHP数据库操作</h2><p>设置字符集<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">"content-type:text/html;charset=utf-8"</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$host = <span class="string">"localhost"</span>;</div><div class="line">$username = <span class="string">"root"</span>;</div><div class="line">$password = <span class="string">"root"</span>;</div><div class="line">$dbname = <span class="string">"comment"</span>;</div></pre></td></tr></table></figure>
+<ol>
+<li><p>连接数据库</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$mysqli = <span class="keyword">new</span> mysqli($host, $username, $password);</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开指定的数据库</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$mysqli-&gt;select_db($dbname);</div><div class="line"><span class="comment">//echo $mysqli-&gt;errno;</span></div><div class="line"><span class="keyword">if</span>($mysqli-&gt;connect_errno)&#123;</div><div class="line">    <span class="keyword">exit</span>(<span class="string">"数据库连接失败:"</span>.$mysqli-&gt;connect_errno);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置客户端字符集</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$mysqli-&gt;set_charset(<span class="string">"utf8"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行结果集</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 数据库增删改查</div><div class="line"> */</div><div class="line"><span class="comment">//查询内容</span></div><div class="line">$sql = <span class="string">"select * from login"</span>;</div><div class="line"></div><div class="line"><span class="comment">//增加内容</span></div><div class="line">$sql = <span class="string">"insert into login(username,password,email) VALUES('jong','asdf','123sadf4@324'),('jack','234','1234sd@324')"</span>;</div><div class="line"></div><div class="line"><span class="comment">//删除内容</span></div><div class="line">$sql = <span class="string">"delete from login where id=40"</span>;</div><div class="line"></div><div class="line"><span class="comment">//修改内容</span></div><div class="line">$sql = <span class="string">"update login set username='jack' where id=2"</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//mysqli_result 返回mysqli的result结果集的对象   执行增删查改用的</span></div><div class="line">$res = $mysqli-&gt;query($sql);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="取出查询的结果集"><a href="#取出查询的结果集" class="headerlink" title="取出查询的结果集"></a>取出查询的结果集</h3><ul>
+<li><p>fetch_all()：取出结果集中的所有数据，默认返回一个二维索引数组</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * MYSQLI_NUM:返回索引数组</div><div class="line"> * MYSQLI_ASSOC:返回关联数组</div><div class="line"> * MYSQLI_BOTH:返回关联+索引数组</div><div class="line"> */</div><div class="line">print_r($res-&gt;fetch_all(MYSQLI_ASSOC));</div></pre></td></tr></table></figure>
+</li>
+<li><p>fetch_array():取出结果集中的一条数据，并使用索引+关联数组方式返回</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print_r($res-&gt;fetch_array());</div></pre></td></tr></table></figure>
+</li>
+<li><p>fetch_row():取出结果集中的一条数据，返回的是索引数组</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print_r($res-&gt;fetch_row());</div></pre></td></tr></table></figure>
+</li>
+<li><p>fetch_object():从结果集中取得一行作为对象</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print_r($res-&gt;fetch_object());</div></pre></td></tr></table></figure>
+</li>
+<li><p>fetch_assoc():返回结果集中的一条数据作为关联数组</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">print_r($res-&gt;fetch_assoc());</div><div class="line"><span class="comment">/** affected_rows:打印受影响的记录条数</span></div><div class="line"> * 1.n 受影响的记录条数</div><div class="line"> * 2.-1，代表SQL语句有问题</div><div class="line"> * 3.0，代表没有受影响的记录条数</div><div class="line"> */</div><div class="line">var_dump($mysqli-&gt;affected_rows);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>释放结果集</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$res-&gt;free_result();</div></pre></td></tr></table></figure>
+</li>
+<li><p>关闭连接</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$mysqli-&gt;close();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">"content-type: text/html; charset=utf-8"</span>);</div><div class="line">$host = <span class="string">"localhost"</span>;</div><div class="line">$username = <span class="string">"root"</span>;</div><div class="line">$password = <span class="string">"root"</span>;</div><div class="line">$dbname = <span class="string">"comment"</span>;</div><div class="line">$mysqli = <span class="keyword">new</span> mysqli($host, $username, $password, $dbname);</div><div class="line"></div><div class="line"><span class="keyword">if</span>($mysqli-&gt;connect_errno)&#123;</div><div class="line">    <span class="keyword">exit</span>(<span class="string">"数据库连接失败:"</span>.$mysqli-&gt;connect_error);</div><div class="line">&#125;</div><div class="line">$mysqli-&gt;set_charset(<span class="string">"utf8"</span>);</div></pre></td></tr></table></figure>
+<ol>
+<li><p>准备预处理语句</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//?指的是占位符</span></div><div class="line">$sql = <span class="string">"select * from login where username=?"</span>;</div><div class="line">$mysqli_stmt = $mysqli-&gt;prepare($sql);</div><div class="line">var_dump($mysqli_stmt);</div><div class="line">$username = <span class="string">"admin"</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>绑定参数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * s: 字符串</div><div class="line"> * i：整型</div><div class="line"> * d：double</div><div class="line"> */</div><div class="line">$mysqli_stmt-&gt;bind_param(<span class="string">"s"</span>, $username);</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行预处理语句</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$e = $mysqli_stmt-&gt;execute();</div><div class="line"><span class="keyword">if</span>($e)&#123;</div><div class="line"><span class="comment">//    echo $mysqli_stmt-&gt;insert_id;</span></div><div class="line">    $rows = <span class="keyword">null</span>;</div><div class="line">   <span class="comment">/* while($row = $mysqli_stmt-&gt;fetch())&#123;</span></div><div class="line">        print_r($row);</div><div class="line">    &#125;*/</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//print_r($rows);</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="PDO"><a href="#PDO" class="headerlink" title="PDO"></a>PDO</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">    $dsn = <span class="string">"mysql:host=localhost;dbname=comment"</span>;</div><div class="line">    $username = <span class="string">"root"</span>;</div><div class="line">    $password = <span class="string">"root"</span>;</div><div class="line">    $pdo = <span class="keyword">new</span> PDO($dsn,$username,$password);</div><div class="line"><span class="comment">// 增   $sql = "insert into login(username,password,email)VALUES ('MM','123','23@324')";</span></div><div class="line"><span class="comment">// 删   $sql = "delete from login WHERE id=50";</span></div><div class="line"><span class="comment">// 改   $sql = "update login set username='XM' WHERE id=51";</span></div><div class="line"><span class="comment">//    $res = $pdo-&gt;exec($sql);</span></div><div class="line"><span class="comment">// 查</span></div><div class="line">    $sql = <span class="string">"select * from login"</span>;</div><div class="line">    $pdo_stm = $pdo-&gt;query($sql);</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * FETCH_BOTH</div><div class="line">     * FETCH_ASSOC</div><div class="line">     * FETCH_NUM</div><div class="line">     */</div><div class="line">    print_r($pdo_stm-&gt;fetchAll(PDO::FETCH_ASSOC));</div><div class="line">    <span class="comment">/*foreach ($pdo_stm as $row) &#123;</span></div><div class="line">        $rows[] = $row;</div><div class="line">    &#125;</div><div class="line">    print_r($rows);*/</div><div class="line"></div><div class="line">    <span class="comment">//异常处理</span></div><div class="line">&#125;<span class="keyword">catch</span>(PDOException $e)&#123;</div><div class="line">    <span class="keyword">echo</span> $e-&gt;getMessage();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="PDO预处理"><a href="#PDO预处理" class="headerlink" title="PDO预处理"></a>PDO预处理</h3><ul>
+<li>连接数据库<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">    $dsn = <span class="string">"mysql:host=localhost;dbname=comment"</span>;</div><div class="line">    $username = <span class="string">"root"</span>;</div><div class="line">    $password = <span class="string">"root"</span>;</div><div class="line">    $pdo = <span class="keyword">new</span> PDO($dsn,$username,$password);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>准备预处理</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$sql = <span class="string">"insert into login(username,password,email) VALUES (?,?,?)"</span>;</div><div class="line">$sth = $pdo-&gt;prepare($sql);</div></pre></td></tr></table></figure>
+</li>
+<li><p>绑定参数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$username = <span class="string">"XXM"</span>;</div><div class="line">$password = md5(<span class="string">"123"</span>);</div><div class="line">$email = <span class="string">"sadf@qq.com"</span>;</div><div class="line"><span class="comment">/*  $sth-&gt;bindParam(1,$username);</span></div><div class="line">$sth-&gt;bindParam(2,$password);</div><div class="line">$sth-&gt;bindParam(3,$email);*/</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行预处理</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    $res = $sth-&gt;execute(<span class="keyword">array</span>($username,$password,$email));</div><div class="line"></div><div class="line">    print_r($res);</div><div class="line"></div><div class="line">&#125;<span class="keyword">catch</span>(PDOException $e)&#123;</div><div class="line">    $e-&gt;getMessage();</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2017/03/08/PHP_MySqli/" data-id="cj00dav620000tsyet45yehod" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-安装mysql和使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/07/安装mysql和使用/" class="article-date">
+  <time datetime="2017-03-07T03:31:24.502Z" itemprop="datePublished">2017-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/07/安装mysql和使用/">安装mysql和使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><h3 id="下载mysqli"><a href="#下载mysqli" class="headerlink" title="下载mysqli"></a>下载mysqli</h3><pre><code>地址：https://dev.mysql.com/downloads/mysql/
+</code></pre><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>打开mysql的安装目录（mysql-5.7.17-winx64），复制一份 my-default.ini
+并将其改名为my.ini 打开my.in文件修改如以下内容
+</code></pre><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">basedir</span> = C:\wbroot\mysql-<span class="number">5.7</span>.<span class="number">17</span>-winx64</div><div class="line"><span class="attr">datadir</span> = C:\wbroot\mysql-<span class="number">5.7</span>.<span class="number">17</span>-winx64\data</div><div class="line"><span class="attr">port</span> = <span class="number">3306</span></div></pre></td></tr></table></figure>
+<pre><code>注意：路径根据mysqli安装路径来决定
+</code></pre><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><pre><code>在系统属性中的 path 中输入mysqli 安装的目录文件中bin的路径
+启动管理员 并输入 mysqld -install 成功后输入net start mysql
+显示启动成功。
+</code></pre><h3 id="安装mysqli"><a href="#安装mysqli" class="headerlink" title="安装mysqli"></a>安装mysqli</h3><pre><code>1.打开mysqli 命令 net start mysql
+2.关闭mysqli 命令 net stop mysql
+</code></pre><h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><pre><code>1. mysqli -u root -p
+2.设置密码 mysqladmin -u root password &quot;设置密码&quot;;
+</code></pre><h3 id="mysql数据库相关操作"><a href="#mysql数据库相关操作" class="headerlink" title="mysql数据库相关操作"></a>mysql数据库相关操作</h3><pre><code>1.查看数据库 show databases;
+2.创建一个数据库 create database 数据库名; 例creata database book;
+3.删除一个数据库 drop database 数据库名;   例drop database book;
+4.使用数据库 use 数据库名  例use book;
+5.删除数据表 drop table 表名;
+6.删除所有数据 delete from user;
+</code></pre><h3 id="mysql数据表的相关操作"><a href="#mysql数据表的相关操作" class="headerlink" title="mysql数据表的相关操作"></a>mysql数据表的相关操作</h3><pre><code>1.创建表 create table book_version(id int,name varchar(20));
+2.查看数据表 show sables;
+3.查看表结构 desc user(表名);
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | YES  |     | NULL    |       |
+| name  | varchar(20) | YES  |     | NULL    |       |
+| sex   | char(1)     | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+Field：字段
+Type：类型
+Null：是否允许存储为空
+Key：是否设置主键或外键
+Default：默认
+Extra：附加消息
+
+补充：
+一张表中只能有一个主键
+
+4.查看表的详细信息 show create table `user\G`; 加上\G更容易查看详细信息
+
+5.查询数据 select * form user;
+6.向表中插入数据  insert into user(name) values(&quot;jack&quot;);
+7.向表中插入多列数据 insert into user(id,name,age) values(1,&quot;jack&quot;,16);
+8.消除记录中的重复数据 select distinct name from user;
+9.from子句，限定的表名 select `Name` from world.user;
+10.from子句，未限定的表名 select `Name` from user;
+11.修改表中的数据 update user set age=25,name=&quot;Tam&quot; where id=2;(修改id=2的age和name字段的数据)
+12.删除表中的数据 delete from user where id=1 and id=2;(删除id为1和2的表中数据)
+13.删除表中所有数据 delete from user;
+14.查询表中数据 select * from 表名 where 字段名
+15.从下标1开始查找3个记录 select * from user limit 1,3
+16.查询表里有多少条记录 select count(*) from user; 
+
+在有聚合函数的情况下使用的判断语句having
+分组查询每个组的最高成绩 select c_name,max(grade) from score group by c_name;
+分组查询每个组的平均成绩 select c_name,avg(grade) as avg_grade(as avg_grade:别名) from score group by c_name;
+union
+</code></pre><h4 id="4-3-order-by语句"><a href="#4-3-order-by语句" class="headerlink" title="4.3 order by语句"></a>4.3 order by语句</h4><pre><code>1.order by 表名 asc|desc; //order by默认是升序的为asc，降序为desc
+如：select * from user order by name desc;设置使用name排序,方式为降序 
+</code></pre><h3 id="5-修改数据表结构"><a href="#5-修改数据表结构" class="headerlink" title="5.修改数据表结构"></a>5.修改数据表结构</h3><pre><code>+ 将id改成int(10) 修改指定字段的数据类型: alter table `user` modify `id` int(10);
++ 将增加一个age字段 alter table user add `age` int(2);
++ 将id设为主键 alter table user add primary key (id);
++ 将id设为唯一字段 alter table user add unique (id);
+</code></pre><h3 id="mysql支持的存储引擎"><a href="#mysql支持的存储引擎" class="headerlink" title="mysql支持的存储引擎"></a>mysql支持的存储引擎</h3><pre><code>1.Myisan
+2.InnoDB 主要使用这2个
+</code></pre><h3 id="mysql忘记root密码"><a href="#mysql忘记root密码" class="headerlink" title="mysql忘记root密码"></a>mysql忘记root密码</h3><pre><code>1. 在DOS窗口下输入`net stop mysql` 
+2. 开一个DOS窗口，这个需要切换到mysql的bin目录
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqld --skip-grant-tables;</div></pre></td></tr></table></figure>
+
+不要关闭窗口
+3. 再开一个DOS窗口，`mysql -u root` 
+4. 输入
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">use mysql </div><div class="line">update mysql.user set authentication_string=password(&apos;123qwe&apos;) where user=&apos;root&apos; and Host = &apos;localhost&apos;; </div><div class="line">flush privileges; </div><div class="line">exit</div></pre></td></tr></table></figure>
+
+5. 使用任务管理器，找到mysqld-nt的进程，结束进程
+</code></pre><h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><pre><code>函数名称                    函数作用
+min(filede_name)           求字段的最小值
+max(filede_name)           求字段的最大值
+</code></pre><h3 id="学生表相关查询"><a href="#学生表相关查询" class="headerlink" title="学生表相关查询"></a>学生表相关查询</h3><ol>
+<li>查询student表的所有记录</li>
+</ol>
+<ul>
+<li>select * from student;</li>
+</ul>
+<ol>
+<li>查询student表的第2条到4条selec记录</li>
+</ol>
+<ul>
+<li>select * from student limit 1,3;</li>
+</ul>
+<ol>
+<li>从student表查询所有学生的学号（id）、姓名（name）和院系（department）的信息</li>
+</ol>
+<ul>
+<li>select id,name,department from student;</li>
+</ul>
+<ol>
+<li>从student表中查询slex计算机系和英语系的学生的信息</li>
+</ol>
+<ul>
+<li>select * from student where department=”计算机系” or department=”英语系”;</li>
+</ul>
+<ol>
+<li>从student表中查询年龄18~22岁的学生信息</li>
+</ol>
+<ul>
+<li>select * from student where birth&lt;=1999 and birth&gt;=1995;</li>
+</ul>
+<ol>
+<li>从score表中查询每个科目的最高分</li>
+</ol>
+<ul>
+<li>select c_name,grade from score group by c_name;</li>
+</ul>
+<ol>
+<li>查询都是湖南的学生的姓名、年龄、院系和考试科目及成绩</li>
+</ol>
+<ul>
+<li>select student.id,name,address,birth,department,c_name,grade from student,score </li>
+<li>where student.address like”湖南%” and student.id=score.stu_id;</li>
+</ul>
+<ol>
+<li>查询计算机成绩低于95的学生信息</li>
+</ol>
+<ul>
+<li>SELECT * FROM student WHERE id IN (SELECT stu_id FROM score WHERE c_name =”计算机” and grade&lt;95);</li>
+</ul>
+<ol>
+<li>查询每个科目的最高成绩</li>
+</ol>
+<ul>
+<li>select c_name,max(grade) from score group by c_name;</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="zhou1996.github.io/2017/03/07/安装mysql和使用/" data-id="cj00davb30009tsyeqq9vi327" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Verification(随机验证码)" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/23/Verification(随机验证码)/" class="article-date">
@@ -87,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2017/02/23/Verification(随机验证码)/" data-id="cizhzo2vt0001bcyebot0vsli" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2017/02/23/Verification(随机验证码)/" data-id="cj00dav9l0001tsyewqtrtwzx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +429,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/23/js简介/" data-id="cizhzo2vn0000bcye1tg3pkq4" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/23/js简介/" data-id="cj00davbm000gtsyepcufxvqi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/滚动条/" data-id="cizhzo2ws000gbcye98lzxr23" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/滚动条/" data-id="cj00davbi000etsye49z5n4f6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/三栏布局/" data-id="cizhzo2vw0002bcyeqxhcrs02" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/三栏布局/" data-id="cj00davcs000ttsyey1plgkyh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,7 +539,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/两栏布局/" data-id="cizhzo2vz0003bcyegoucxknj" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/两栏布局/" data-id="cj00davai0002tsyeknx7folz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,7 +575,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/水平垂直居中/" data-id="cizhzo2wo000dbcyedqu14uf4" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/水平垂直居中/" data-id="cj00davba000btsye4kqeh63v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -338,7 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/渐变色文字/" data-id="cizhzo2wr000fbcyewxktrxpz" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/渐变色文字/" data-id="cj00davcq000rtsye45vazi2z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -375,79 +649,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/动画（心脏跳动）/" data-id="cizhzo2w00004bcyer4re4kwi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-插入网页上的logo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/20/插入网页上的logo/" class="article-date">
-  <time datetime="2016-12-20T03:52:55.239Z" itemprop="datePublished">2016-12-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/20/插入网页上的logo/">插入网页上logo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <link rel="shortcut icon" href="XXX.ico">
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/插入网页上的logo/" data-id="cizhzo2wk000bbcyeev5ag3fs" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-单栏布局" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/20/单栏布局/" class="article-date">
-  <time datetime="2016-12-20T03:49:05.982Z" itemprop="datePublished">2016-12-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/20/单栏布局/">水平垂直居中</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span>第一种<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">50%</span></div><div class="line">    transform:<span class="built_in">translate</span>(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="zhou1996.github.io/2016/12/20/单栏布局/" data-id="cizhzo2w40005bcyeaee0f973" class="article-share-link">Share</a>
+      <a data-url="zhou1996.github.io/2016/12/20/动画（心脏跳动）/" data-id="cj00davco000qtsye62ju9ler" class="article-share-link">Share</a>
       
       
     </footer>
@@ -478,7 +680,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
     </div>
   </div>
 
@@ -491,6 +693,14 @@
       <ul>
         
           <li>
+            <a href="/2017/03/08/PHP_MySqli/">PHP数据库操作</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/07/安装mysql和使用/">安装mysql和使用</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/23/Verification(随机验证码)/">随机验证码</a>
           </li>
         
@@ -500,14 +710,6 @@
         
           <li>
             <a href="/2016/12/20/滚动条/">滚动条</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/20/三栏布局/">三栏布局</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/20/两栏布局/">两栏布局</a>
           </li>
         
       </ul>
