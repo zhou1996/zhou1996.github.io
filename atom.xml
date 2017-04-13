@@ -44,8 +44,8 @@
   
   <entry>
     <title>安装mysql和使用</title>
-    <link href="zhou1996.github.io/2017/02/10/use_mysql/"/>
-    <id>zhou1996.github.io/2017/02/10/use_mysql/</id>
+    <link href="zhou1996.github.io/2017/02/10/useMysql/"/>
+    <id>zhou1996.github.io/2017/02/10/useMysql/</id>
     <published>2017-02-10T01:36:00.000Z</published>
     <updated>2017-04-13T09:22:21.000Z</updated>
     
@@ -202,8 +202,8 @@ max(filede_name)           求字段的最大值
     <title>PHP数据库操作</title>
     <link href="zhou1996.github.io/2017/01/12/PHP_MySqli/"/>
     <id>zhou1996.github.io/2017/01/12/PHP_MySqli/</id>
-    <published>2017-01-11T16:00:00.000Z</published>
-    <updated>2017-04-13T05:10:57.711Z</updated>
+    <published>2017-01-12T03:06:00.000Z</published>
+    <updated>2017-04-13T09:32:56.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="PHP数据库操作"><a href="#PHP数据库操作" class="headerlink" title="PHP数据库操作"></a>PHP数据库操作</h2><p>设置字符集<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">"content-type:text/html;charset=utf-8"</span>);</div></pre></td></tr></table></figure></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$host = <span class="string">"localhost"</span>;</div><div class="line">$username = <span class="string">"root"</span>;</div><div class="line">$password = <span class="string">"root"</span>;</div><div class="line">$dbname = <span class="string">"comment"</span>;</div></pre></td></tr></table></figure>
