@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="zhou1996.github.io/"/>
-  <updated>2017-04-12T15:59:50.000Z</updated>
+  <updated>2017-04-13T05:10:57.711Z</updated>
   <id>zhou1996.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>PHP数据库操作</title>
-    <link href="zhou1996.github.io/2017/04/12/PHP_MySqli/"/>
-    <id>zhou1996.github.io/2017/04/12/PHP_MySqli/</id>
-    <published>2017-04-11T16:00:00.000Z</published>
-    <updated>2017-04-12T15:59:50.000Z</updated>
+    <link href="zhou1996.github.io/2017/01/12/PHP_MySqli/"/>
+    <id>zhou1996.github.io/2017/01/12/PHP_MySqli/</id>
+    <published>2017-01-11T16:00:00.000Z</published>
+    <updated>2017-04-13T05:10:57.711Z</updated>
     
     <content type="html"><![CDATA[<h2 id="PHP数据库操作"><a href="#PHP数据库操作" class="headerlink" title="PHP数据库操作"></a>PHP数据库操作</h2><p>设置字符集<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">"content-type:text/html;charset=utf-8"</span>);</div></pre></td></tr></table></figure></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$host = <span class="string">"localhost"</span>;</div><div class="line">$username = <span class="string">"root"</span>;</div><div class="line">$password = <span class="string">"root"</span>;</div><div class="line">$dbname = <span class="string">"comment"</span>;</div></pre></td></tr></table></figure>
