@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="zhou1996.github.io/"/>
-  <updated>2017-04-20T03:43:55.000Z</updated>
+  <updated>2017-04-20T04:26:38.000Z</updated>
   <id>zhou1996.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>其它CSS样式</title>
-    <link href="zhou1996.github.io/2017/02/15/else_CSS/"/>
-    <id>zhou1996.github.io/2017/02/15/else_CSS/</id>
-    <published>2017-02-15T01:36:00.000Z</published>
-    <updated>2017-04-20T03:43:55.000Z</updated>
+    <link href="zhou1996.github.io/2015/02/15/else_CSS/"/>
+    <id>zhou1996.github.io/2015/02/15/else_CSS/</id>
+    <published>2015-02-15T01:36:00.000Z</published>
+    <updated>2017-04-20T04:26:38.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="超出部分省略显示"><a href="#超出部分省略显示" class="headerlink" title="超出部分省略显示"></a>超出部分省略显示</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">white-space</span>:nowrap;<span class="comment">/*强制在一行显示*/</span></div><div class="line">    <span class="attribute">overflow</span>:hidden;<span class="comment">/*超出部分隐藏*/</span></div><div class="line">    <span class="attribute">text-overflow</span>:ellipsis;<span class="comment">/*超出部分用省略号代替*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="上三角形"><a href="#上三角形" class="headerlink" title="上三角形"></a>上三角形</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">border-style</span>:solid;</div><div class="line">    <span class="attribute">border-width</span>:<span class="number">50px</span>;</div><div class="line">    <span class="attribute">border-color</span>:<span class="number">#f00</span> transparent transparent transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
